@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import React, { useState, useEffect } from "react";
 
 interface Pokemon {
@@ -91,7 +92,9 @@ export function PokemonCard({
           {isFavorite ? "❤️" : "🤍"}
         </button>
       </div>
-      <img
+      <Image
+        width={200}
+        height={200}
         src={pokemon.sprites.front_default}
         alt={pokemon.name}
         className="mx-auto mb-2 transition-opacity duration-300 ease-in-out hover:opacity-80"

@@ -1,5 +1,6 @@
 "use client";
 
+import { env_data } from "@/lib/env";
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
 
@@ -34,7 +35,7 @@ export function PokemonDetails({
       setError("");
       try {
         const response = await fetch(
-          `https://pokeapi.co/api/v2/pokemon/${name}`
+          `${env_data.NEXT_PUBLIC_POKE_API_URL}pokemon/${name}`
         );
         if (!response.ok) {
           throw new Error("Failed to fetch Pokemon details");
@@ -81,11 +82,15 @@ export function PokemonDetails({
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
             <Image
+              width={250}
+              height={250}
               src={pokemon.sprites.front_default}
               alt={`${pokemon.name} front`}
               className="w-full"
             />
             <Image
+              width={230}
+              height={230}
               src={pokemon.sprites.back_default}
               alt={`${pokemon.name} back`}
               className="w-full"

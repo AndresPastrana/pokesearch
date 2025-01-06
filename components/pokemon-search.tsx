@@ -6,6 +6,7 @@ import { PokemonList } from "@/components/pokemon-list";
 import { Pagination } from "@/components//pagination";
 import { PokemonDetails } from "@/components/pokemon-details";
 import { useTheme } from "next-themes";
+import { env_data } from "@/lib/env";
 
 export default function PokemonSearch() {
   // TODO: Refactor loading data, pagination
@@ -37,7 +38,7 @@ export default function PokemonSearch() {
 
       try {
         const response = await fetch(
-          `https://pokeapi.co/api/v2/pokemon?limit=1302`
+          `${env_data.NEXT_PUBLIC_POKE_API_URL}pokemon?limit=1302`
         );
         if (!response.ok) {
           throw new Error("Failed to fetch Pokemon list");

@@ -6,7 +6,7 @@ export default function Home() {
       <h1 className="text-4xl font-bold mb-6 text-center text-blue-600 dark:text-blue-400">
         Pokémon Search
       </h1>
-      {/* <PokemonSearch /> */}
+      <PokemonSearch />
     </main>
   );
 }

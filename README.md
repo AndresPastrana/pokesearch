@@ -12,13 +12,17 @@ This web application allows users to interact with Pokémon data through the **P
 
 2. **Favorites List**:
    - Users can save their favorite Pokémon to a personalized list.
-   - View saved favorites on a separate page or section.
+   - View saved favorites on a section.
 
 3. **Theme Toggling**:
    - Option to switch between **light** and **dark** themes.
    - Provides a more comfortable and user-centric experience, adapting to user preferences.
 
-4. **Containerization with Docker**:
+4. **Pagination**:
+   - Implemented pagination to manage the display of Pokémon search results.
+   - Enhances user experience by breaking down large sets of data into manageable pages.
+
+5. **Containerization with Docker**:
    - The application is packaged using **Docker**, allowing easy setup and deployment.
    - Can be run in any Docker-supported environment, ensuring portability and ease of deployment.
 
@@ -36,7 +40,6 @@ This version of the app is simpler compared to the more optimized version of the
 
 ## Potential Future Enhancements
 
-- **Pagination/Infinite Scrolling** for improved performance when dealing with large data sets.
 - **User Authentication** to enable saving Pokémon on a user profile.
 - **Advanced Search Filters** to allow searches by Pokémon type, abilities, or other attributes.
 - **Performance Optimizations** like lazy loading components
@@ -64,7 +67,7 @@ Follow these steps to run the application locally:
 
    ```bash
    git clone https://github.com/AndresPastrana/pokesearch.git
-   cd pokenow
+   cd pokesearch
    ```
 
 2. **(Optional) Ensure Dependencies Are Up to Date**:
@@ -78,7 +81,7 @@ Follow these steps to run the application locally:
    Build and start the application using Docker Compose:
 
    ```bash
-   docker-compose up --build
+   docker-compose up -d
    ```
 
 4. **Access the Application**:
